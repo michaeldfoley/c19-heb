@@ -1,8 +1,8 @@
-const args = require('node-args');
 const heb = require('./heb')
 const { sleep } = require('./utils')
 
-const { lat, long, distance, types } = args
+const argv = require('minimist')(process.argv.slice(2));
+const { lat, long, distance, types } = argv
 
 async function run() {
   let loop = true

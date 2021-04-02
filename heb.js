@@ -25,7 +25,7 @@ module.exports = async function heb({
   const METERS_TO_MILES = 1609.34
   const HEB_GET_SLOTS = 'https://heb-ecom-covid-vaccine.hebdigital-prd.com/vaccine_locations.json'
 
-  console.log('Searching...')
+  console.log(`Searching for ${types.join(', ')} appointments within ${maxDistance} miles of (${homeLatitude}, ${homeLongitude})`)
   const result = await axios.get(HEB_GET_SLOTS, {
     headers: { 'User-Agent': genUserAgent() },
   }).catch(console.log)

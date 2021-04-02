@@ -13,9 +13,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
     "geolib": "^3.3.1",
-    "node-args": "^2.1.8",
+    "minimist": "^1.2.5",
     "playwright": "^1.9.1",
     "user-agents": "^1.0.583"
   },
