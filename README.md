@@ -15,11 +15,13 @@ yarn install
 yarn start
 ```
 
+Sometimes a slot will fill before we get to it. In that case the browser will automatically close and searching will resume. 
+
 ### Options
 Use the following options to customize your search. The search coordinates default to Austin, TX.
 
-| flag | description | default |
-| --- | --- |
+| Flag | Description | Default |
+| --- | --- | --- |
 | `--lat` | latitude of your starting location | 30.267153 |
 | `--long` | longitude of your starting location | -97.743057 |
 | `--distance` | distance to search (in miles) from starting location | 25 |
