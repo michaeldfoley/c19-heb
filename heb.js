@@ -1,7 +1,7 @@
 const axios = require('axios').default
 const geolib = require('geolib')
 const playwright = require('playwright')
-const { sleep, genUserAgent, noop } = require('./utils')
+const { sleep, genUserAgent, noop, randomNumber } = require('./utils')
 
 const METERS_TO_MILES = 1609.34
 const HEB_GET_SLOTS = 'https://heb-ecom-covid-vaccine.hebdigital-prd.com/vaccine_locations.json'
@@ -143,17 +143,17 @@ async function browser(url) {
     noop,
   )
 
-  await sleep(721)
+  await sleep(randomNumber(400, 550))
   await page.click(DATE_SELECTOR).catch(noop)
   const dateSelector = await page.getAttribute(DATE_SELECTOR, 'aria-owns').catch(noop)
   await page.click(`#${dateSelector} > ${OPTION_SELECTOR}`).catch(noop)
 
-  await sleep(655)
+  await sleep(randomNumber(400, 550))
   await page.click(TIME_SELECTOR).catch(noop)
   const timeSelector = await page.getAttribute(TIME_SELECTOR, 'aria-owns').catch(noop)
   await page.click(`#${timeSelector} > ${OPTION_SELECTOR}`).catch(noop)
 
-  await sleep(600)
+  await sleep(randomNumber(400, 550))
   await page.click(SUBMIT_BUTTON_SELECTOR).then(
     () => foundAppointment = true,
     () => browser.close()

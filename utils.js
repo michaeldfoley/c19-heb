@@ -19,6 +19,14 @@ const genUserAgent = () => {
   return userAgent.toString()
 }
 
+/**
+ * Generate a random number within a range
+ * @param {number} min 
+ * @param {number} max 
+ * @returns number
+ */
+const randomNumber = (min, max) => Math.random() * (max - min) + min
+
 /** no-op function */
 const noop = () => { }
 
@@ -26,4 +34,5 @@ module.exports = {
   sleep,
   genUserAgent,
   noop,
+  randomNumber,
 }

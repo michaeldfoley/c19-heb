@@ -1,5 +1,5 @@
 const heb = require('./heb')
-const { sleep } = require('./utils')
+const { sleep, randomNumber } = require('./utils')
 
 const argv = require('minimist')(process.argv.slice(2));
 const { lat, long, distance, types } = argv
@@ -14,7 +14,7 @@ async function run() {
       types: types?.split(',')
     })
     loop = !foundAppointment
-    await sleep(10000)
+    await sleep(randomNumber(10000, 13000))
   }
 }
 
